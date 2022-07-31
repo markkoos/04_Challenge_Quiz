@@ -1,0 +1,39 @@
+/* global */
+
+* {
+    font-size: 24px;
+    text-align: center;
+}
+
+/* header */
+
+header {
+    line-height: 50px;
+}
+
+.timeStyle {
+    text-align: end;
+}
+
+/* section */
+
+.quiz-space {
+    line-height: 30px;
+    
+}
+
+.rules {
+    font-size: 30px;
+}
+
+
+section .quiz-space ul li {
+    list-style: none;
+}
+
+.scoreboard {
+    line-height: 80px;
+}
+
+
+
