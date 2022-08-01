@@ -39,7 +39,9 @@ var option6C = document.createElement(`button`);
 // viewing scores button
 
 scoreBtn.addEventListener(`click`, function() {
-    
+    var storedInput = localStorage.getItem(`input`);
+    var storedTime = localStorage.getItem(`timeScore`);
+    quizText.textContent = `${storedInput} - ${storedTime}`
 })
 
 
