@@ -10,12 +10,14 @@ var addText = document.querySelector(`.added-text`);
 var scoreBtn = document.querySelector(`.scorebutton`);
 
     // used when creating the choices for each question
+
 var choices = document.createElement(`ul`);
 var liOne = document.createElement(`li`);
 var liTwo = document.createElement(`li`);
 var liThree = document.createElement(`li`);
 
     // all the options during the quiz
+
 var option1A = document.createElement(`button`);
 var option1B = document.createElement(`button`);
 var option1C = document.createElement(`button`);
@@ -45,8 +47,6 @@ scoreBtn.addEventListener(`click`, function() {
 })
 
 
-
-
 // function that hides the rules once the start button is pressed 
 
 function hideRules() {
@@ -59,7 +59,7 @@ function disableStart() {
     startButton.disabled = true;
 }
 
-// creates the listed quiz choice elements once start button is pressed
+// creates the listed quiz choice elements for each individual quiz question
 
 function createChoicesQ1() {
     quizText.appendChild(choices);
@@ -145,6 +145,9 @@ function clearChoices() {
 // function for starting the quiz (assigned to the button)
 
 function quizStart() {
+
+    // time given at start of the quiz
+
     var timeLeft = 45
     timerCount.textContent = `Time Left: ${timeLeft} seconds`;
 
@@ -204,6 +207,7 @@ function quizStart() {
             answers.textContent = `YOU RIGHT`;
 
             // new question and options
+
             var questionTwo = quizText.textContent = `What is the file extension for a README?`;
             option2A.textContent = `.md`;
             option2B.textContent = `.txt`;
@@ -276,6 +280,9 @@ function quizStart() {
                             }) 
 
                             option6C.addEventListener(`click`, function() {
+
+                                // stops the timer and creates text for winning the game
+
                                 answers.textContent = ``;
                                 timerCount.textContent = timeLeft;
                                 startButton.removeAttribute(`disabled`)
@@ -284,6 +291,7 @@ function quizStart() {
                                 clearChoices();
                                 
                                 // creates textbox, submit button, and saves the input to local storage
+
                                 var input = document.createElement(`input`); 
                                 input.setAttribute(`type`, `text`);
                                 quizText.appendChild(input);
@@ -349,6 +357,9 @@ function quizStart() {
             answers.textContent = `WRONG LOL`;
         })
     }
+
+
+    // calling upon functions that help the quiz questions display without issues with other elements
 
     startTime();
     hideRules();
